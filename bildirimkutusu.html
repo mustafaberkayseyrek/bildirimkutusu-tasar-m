@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animasyon</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+        <style>
+
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            #message-box{
+                background-color: darkcyan;
+                text-align: center;
+                color: white;
+            }
+            #header {
+                cursor: pointer;
+                height: 20px;
+                padding: 10px;
+                border-bottom: 1px solid white;
+            }
+            #content {
+                height: 150px;
+                padding: 10px;
+                display: none;
+            }
+            #close {
+                float: right;
+            }
+            #close:hover{
+                color: red;
+            }
+        </style>
+
+        <script>
+            $(function(){
+                $("#header").click(function(){
+
+                    $("#content").toggle("slow");
+
+                });
+                $("#close").click(function(){
+                    $("#message-box").hide("slow");
+                })
+            });
+
+
+        </script>
+</head>
+
+<body>
+    <div id="message-box">
+        <div id="header">
+            <span id="close">X</span> Mesajınız var
+        </div>
+        <div id="content"></div>
+    </div>
+</body>
+
+</html>
